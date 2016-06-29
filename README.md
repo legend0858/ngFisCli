@@ -1,10 +1,10 @@
-###项目脚手架
+##项目脚手架
 
 
-Angular + Bootstrap + fis3 + bower + sass
+###Angular + Bootstrap + fis3 + bower + sass
 
 
-安装步骤:
+####安装步骤:
 
 1.node,bower 什么的就不说了
 
@@ -34,7 +34,7 @@ fis.match('*', {
 </pre>
 
 
-依赖项目:
+####依赖项目:
 Angular,Bootstrap,sass,rdash-ui,Bower,fis3
 
 
