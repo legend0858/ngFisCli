@@ -1,24 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-cn" ng-app="myApp">
+<html lang="zh-cn" ng-app="RDash">
 <head>
     <meta charset="UTF-8">
     <title>项目脚手架</title>
+    <script type="text/javascript" src="/lib/mod.js"></script>
     <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap-sass/assets/stylesheets/bootstrap.scss">
     <link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="/bower_components/rdash-ui/dist/css/rdash.css">
     <link rel="stylesheet" type="text/css" href="/bower_components/ng-dialog/css/ngDialog.css">
     <link rel="stylesheet" type="text/css" href="/bower_components/ng-dialog/css/ngDialog-theme-default.css">
+    <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-cookies/angular-cookies.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="/bower_components/ng-dialog/js/ngDialog.js"></script>
     <link rel="stylesheet" type="text/css" href="style/main.scss">
 </head>
-<body>
-
-<script type="text/javascript" src="/lib/mod.js"></script>
-<script type="text/javascript" src="/bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-<script type="text/javascript" src="/bower_components/angular-cookies/angular-cookies.js"></script>
-<script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script type="text/javascript" src="/bower_components/angular-resource/angular-resource.js"></script>
-<script type="text/javascript" src="/bower_components/ng-dialog/js/ngDialog.js"></script>
+<body ng-controller="MasterCtrl">
+<div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+    <!-- Sidebar -->
+    <link rel="import" href="partial/sidebar/sidebar.html?__inline"/>
+    <!-- End Sidebar -->
+    <div id="content-wrapper">
+        <div class="page-content">
+            <!-- Header Bar -->
+            <link rel="import" href="partial/header/header.html?__inline"/>
+            <!-- End Header Bar -->
+            <!-- Main Content -->
+            <div ui-view></div>
+        </div><!-- End Page Content -->
+    </div><!-- End Content Wrapper -->
+</div><!-- End Page Wrapper -->
 <script>
     require("boot/app");
 </script>
