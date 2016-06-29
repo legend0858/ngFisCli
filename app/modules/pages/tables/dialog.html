@@ -1,0 +1,26 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{vm.title}}帐号信息</h4>
+</div>
+<div class="modal-body">
+    <form name="addAgentForm" ng-submit="vm.submit()">
+        <div class="form-group">
+            <label for="agentname">账户名</label>
+            <input type="text" class="form-control" id="agentname" placeholder="agentname" ng-model="vm.form.agentname">
+        </div>
+        <div class="form-group">
+            <label for="address">地址</label>
+            <input type="text" class="form-control" id="address" placeholder="address" ng-model="vm.form.address">
+        </div>
+        <div class="form-group">
+            <label for="postcode">邮政编码</label>
+            <input type="text" class="form-control" id="postcode" placeholder="postcode" ng-model="vm.form.postcode">
+        </div>
+        <div class="form-group">
+            <label for="telephone">电话号码</label>
+            <input type="text" class="form-control" id="telephone" placeholder="telephone" ng-model="vm.form.telephone">
+        </div>
+        <p class="text-center" style="padding-top:30px;">
+            <button type="submit" class="btn btn-primary btn-lg" style="padding:10px 30px;">{{vm.btnTxt}}</button>
+        </p>
+    </form>
+</div>
