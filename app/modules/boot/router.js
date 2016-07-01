@@ -1,11 +1,10 @@
 /**
- * @name:app路由
+ * 路由配置列表
  * @author:岳(liuyue@travelsky.com)
- * @date: 2016/6/28
  */
 
-var dashboard = require('pages/dashboard/dashboard');
-var tables = require('pages/tables/tables');
+var dashboard = require('pages/dashboard');
+var tables = require('pages/tables');
 
 /**
  * Route configuration for the RDash module.

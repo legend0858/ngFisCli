@@ -1,7 +1,6 @@
 /**
- * @name:app启动入口
+ * app启动入口
  * @author:岳(liuyue@travelsky.com)
- * @date: 2016/6/28
  */
 
 angular.module('RDash', ['ui.bootstrap', 'ui.router', 'ngCookies', 'ngResource', 'ngDialog']);

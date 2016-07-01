@@ -23,12 +23,12 @@ fis.match("**/*",{
     .match("**/index.html",{
         release:"index.html"
     })
-    .match("**/_*",{
-        release:false
-    })
     .match(/^\/app\/modules\/(.*)\.(js)$/i, {
         isMod: true,
         id: '$1'     //id支持简写，去掉modules和.js后缀中间的部分
+    })
+    .match(/^\/app\/modules\/(pages|component)\/([^\/]+)\/\2\.(js)$/i, {
+        id: '$1/$2'
     })
 
 
@@ -42,11 +42,11 @@ fis.match('::packager', {
 })
 
 //设置发布目录
-fis.match('*', {
+/*fis.match('*', {
     deploy: fis.plugin('local-deliver', {
         to: './output'
     })
-})
+})*/
 
 
 /*************生产环境压缩代码*************/
