@@ -41,22 +41,17 @@ fis.match('::packager', {
     packager: fis.plugin('map')
 })
 
-//设置发布目录
-/*fis.match('*', {
-    deploy: fis.plugin('local-deliver', {
-        to: './output'
-    })
-})*/
-
 
 /*************生产环境压缩代码*************/
 fis.media("prod")
     .match("**/*.js",{
         optimizer:fis.plugin("uglify-js"),
-        preprocessor: fis.plugin('annotate')
+        preprocessor: fis.plugin('annotate'),
+        useHash: true
     })
     .match("**/*.css",{
-        optimizer:fis.plugin("clean-css")
+        optimizer:fis.plugin("clean-css"),
+        useHash: true
     })
     .match("**/*.png", {
         optimizer:fis.plugin("png-compressor")
