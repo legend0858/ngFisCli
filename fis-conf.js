@@ -7,9 +7,9 @@ fis.set("static","/static");
 
 
 /***************less预编译语言处理***************/
-fis.match("**/*.less",{
+fis.match("**/*.scss",{
     rExt:"css",
-    parser:fis.plugin("less-2.x",{
+    parser:fis.plugin("node-sass",{
         "sourceMap":true
     })
 })
