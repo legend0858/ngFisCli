@@ -6,10 +6,12 @@ fis.set("project.files",["app/**",'map.json','lib']);
 fis.set("static","/static");
 
 
-/***************scss预编译语言处理***************/
-fis.match("**/*.scss",{
+/***************less预编译语言处理***************/
+fis.match("**/*.less",{
     rExt:"css",
-    parser:fis.plugin("node-sass")
+    parser:fis.plugin("less-2.x",{
+        "sourceMap":true
+    })
 })
 
 
@@ -41,17 +43,22 @@ fis.match('::packager', {
     packager: fis.plugin('map')
 })
 
+//设置发布目录
+/*fis.match('*', {
+    deploy: fis.plugin('local-deliver', {
+        to: './output'
+    })
+})*/
+
 
 /*************生产环境压缩代码*************/
 fis.media("prod")
     .match("**/*.js",{
         optimizer:fis.plugin("uglify-js"),
-        preprocessor: fis.plugin('annotate'),
-        useHash: true
+        preprocessor: fis.plugin('annotate')
     })
     .match("**/*.css",{
-        optimizer:fis.plugin("clean-css"),
-        useHash: true
+        optimizer:fis.plugin("clean-css")
     })
     .match("**/*.png", {
         optimizer:fis.plugin("png-compressor")

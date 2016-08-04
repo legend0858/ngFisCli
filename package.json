@@ -22,7 +22,6 @@
   "homepage": "https://github.com/fis-scaffold/default",
   "dependencies": {},
   "devDependencies": {
-    "fis-parser-less-2.x": "^0.1.4",
     "fis-parser-node-sass": "^0.2.0",
     "fis-preprocessor-annotate": "0.0.2",
     "fis3-hook-commonjs": "^0.1.22",
