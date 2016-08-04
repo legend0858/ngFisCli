@@ -63,7 +63,7 @@ fis.media("prod")
     .match("**/*.png", {
         optimizer:fis.plugin("png-compressor")
     })
-    .match("lib/mod.js",{
+    .match("app/lib/mod.js",{
         packTo:"pkg/vendor.js"
     })
     .match("bower_components/**/*.js",{
