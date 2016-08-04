@@ -9,7 +9,9 @@ fis.set("static","/static");
 /***************scss预编译语言处理***************/
 fis.match("**/*.scss",{
     rExt:"css",
-    parser:fis.plugin("node-sass")
+    parser:fis.plugin("node-sass",{
+        "sourceMap":true
+    })
 })
 
 
