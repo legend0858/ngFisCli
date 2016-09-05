@@ -3,6 +3,15 @@
  * @author:岳(liuyue@travelsky.com)
  */
 
+require("bootstrap");
+require("angular");
+require("angular-ui-router");
+require("angular-ui-bootstrap");
+require("angular-cookies");
+require("angular-resource");
+require("ng-dialog");
+require("../directive/test.js");
+
 angular.module('RDash', ['ui.bootstrap', 'ui.router', 'ngCookies', 'ngResource', 'ngDialog']);
 require('router');
 

@@ -1,4 +1,4 @@
-require('component/widget');
+require('../../component/widget');
 
 module.exports = {
     url: '/tables',

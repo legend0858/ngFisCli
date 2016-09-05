@@ -3,8 +3,8 @@
  * @author:岳(liuyue@travelsky.com)
  */
 
-var dashboard = require('pages/dashboard');
-var tables = require('pages/tables');
+var dashboard = require('../pages/dashboard');
+var tables = require('../pages/tables');
 
 /**
  * Route configuration for the RDash module.

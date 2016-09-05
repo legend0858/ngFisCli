@@ -5,7 +5,7 @@
 require('./widget-header.js');
 require('./widget-body.js');
 require('./widget-footer.js');
-require('directive/loading');
+require('../../directive/loading');
 
 angular.module('RDash')
     .directive('rdWidget', rdWidget);

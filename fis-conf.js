@@ -1,12 +1,31 @@
 
-fis.unhook('components');
-fis.hook('commonjs');
-
-fis.set("project.files",["app/**",'map.json','lib']);
+fis.set("project.files",["app/**",'map.json']);
+fis.set("project.ignore",["server/**"]);
 fis.set("static","/static");
 
+fis.unhook('components');
+fis.hook('commonjs', {
+    extList: ['.js', '.jsx', '.es', '.ts', '.tsx']
+});
 
-/***************less预编译语言处理***************/
+fis.hook('node_modules');
+
+fis.match('/node_modules/**.js', {
+    isMod: true
+});
+
+
+/*************** 支持es6,babel ***************/
+fis.match('app/modules/**.js', {
+    isMod: true,
+    parser: fis.plugin('babel-5.x', {
+        blacklist: ['regenerator'],
+        stage: 3
+    })
+});
+
+
+/*************** sass预编译语言处理 ***************/
 fis.match("**/*.scss",{
     rExt:"css",
     parser:fis.plugin("node-sass",{
@@ -15,7 +34,7 @@ fis.match("**/*.scss",{
 })
 
 
-/******************目录规范**********************/
+/****************** 目录规范 **********************/
 fis.match("**/*",{
         release:"${static}/$0"
     })
@@ -37,18 +56,18 @@ fis.match("**/*",{
 //打包基础配置
 fis.match('::packager', {
     postpackager: fis.plugin('loader', {
-        resourceType: 'mod',
+        //resourceType: 'mod',
         useInlineMap: true // 资源映射表内嵌
     }),
     packager: fis.plugin('map')
 })
 
 //设置发布目录
-/*fis.match('*', {
+fis.match('*', {
     deploy: fis.plugin('local-deliver', {
-        to: './output'
+        to: './server'
     })
-})*/
+})
 
 
 /*************生产环境压缩代码*************/
@@ -66,10 +85,10 @@ fis.media("prod")
     .match("app/lib/mod.js",{
         packTo:"pkg/vendor.js"
     })
-    .match("bower_components/**/*.js",{
+    .match("node_modules/**/*.js",{
         packTo:"pkg/vendor.js"
     })
-    .match("bower_components/**/*.css",{
+    .match("node_modules/**/*.css",{
         packTo:"pkg/vendor.css"
     })
     .match("::packager",{

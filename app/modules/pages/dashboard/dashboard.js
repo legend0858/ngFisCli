@@ -1,5 +1,5 @@
-require('directive/alerts');
-require('component/widget');
+require('../../directive/alerts');
+require('../../component/widget');
 
 module.exports = {
     url: '',
