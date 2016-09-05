@@ -10,7 +10,7 @@ fis.hook('commonjs', {
 
 fis.hook('node_modules');
 
-fis.match('/node_modules/**.js', {
+fis.match('node_modules/**.js', {
     isMod: true
 });
 
